@@ -36,8 +36,8 @@ if(EXISTS ${DIR_JSON}/amalgamate.py)
 endif()
 
 add_external_library(log ${DIR_LOG} "https://github.com/martim01/log.git" "" TRUE)
-add_external_library(ptpmonkey ${DIR_PTPMONKEY} "https://github.com/martim01/ptpmonkey.git" "" TRUE)
-add_external_library(restgoose ${DIR_RESTGOOSE} "https://github.com/martim01/restgoose.git" "" TRUE)
+add_external_library(ptpmonkey ${DIR_PTPMONKEY} "https://github.com/jamiehull/ptpmonkey.git" "" TRUE)
+add_external_library(restgoose ${DIR_RESTGOOSE} "https://github.com/jamiehull/restgoose.git" "origin/main" TRUE)
 
 add_external_library(sapserver ${DIR_SAPSERVER} "https://github.com/jamiehull/sapserver.git" "" TRUE)
 add_external_library(livewire ${DIR_LIVEWIRE} "https://github.com/martim01/livewirediscover.git"  "" TRUE)
@@ -50,7 +50,6 @@ endif()
 
 include_directories(${DIR_LOG}/include)
 include_directories(${DIR_RESTGOOSE}/include)
-#include_directories(${DIR_PTPMONKEY}/include)
 
 
 configure_file(pam2_paths.h.in ${CMAKE_BINARY_DIR}/include/pam2_paths.h @ONLY)
