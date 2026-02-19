@@ -1,6 +1,14 @@
 include(FetchContent)
 
 function(add_external_library name dir repo tag build)
+
+# Check if cmake target definition already exists
+    if(TARGET ${name})
+        message(STATUS "Target ${name} already exists, skipping")
+        return()
+    endif()
+
+# If it does not exist - clone it
 	if(NOT EXISTS ${dir}/CMakeLists.txt AND NOT EXISTS ${dir}/README.md)
 		message(STATUS "Cloning ${name} from ${repo} to ${dir}")
 		if(tag)
@@ -10,6 +18,8 @@ function(add_external_library name dir repo tag build)
 		endif()
 		FetchContent_MakeAvailable(${name})
 	endif()
+	
+# If it does exist use the local lib
 	if(EXISTS ${dir}/CMakeLists.txt)
 		message(STATUS "Using existing ${name} at ${dir}")
 		if(${build})
