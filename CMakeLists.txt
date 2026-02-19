@@ -40,7 +40,7 @@ add_external_library(ptpmonkey ${DIR_PTPMONKEY} "https://github.com/jamiehull/pt
 add_external_library(restgoose ${DIR_RESTGOOSE} "https://github.com/jamiehull/restgoose.git" "origin/main" TRUE)
 
 add_external_library(sapserver ${DIR_SAPSERVER} "https://github.com/jamiehull/sapserver.git" "" TRUE)
-add_external_library(livewire ${DIR_LIVEWIRE} "https://github.com/martim01/livewirediscover.git"  "" TRUE)
+add_external_library(livewire ${DIR_LIVEWIRE} "https://github.com/jamiehull/livewirediscover.git"  "" TRUE)
 add_external_library(dnssd ${DIR_DNSSD} "https://github.com/martim01/dnssd.git"  "" TRUE)
 
 if(${NMOS})
